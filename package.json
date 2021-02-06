@@ -1,30 +1,28 @@
 {
-  "name": "futebol.io",
-  "version": "1.0.0",
-  "description": "Sem frescura. Só tabelas.",
+  "name": "api.futebol.io",
+  "description": "API project for futebol.io",
+  "main": "index.js",
   "scripts": {
-    "api": "npm run --prefix api/functions dev",
-    "web": "npm run --prefix web dev",
-    "dev": "concurrently --names \"web,api\" \"npm run --prefix web dev\" \"npm run --prefix api/functions dev\""
+    "lint": "./node_modules/.bin/eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "dev": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rfoel/futebol.io.git"
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "firebase-admin": "^5.8.2",
+    "firebase-functions": "^0.8.1",
+    "request": "^2.83.0"
   },
-  "keywords": [
-    "vue",
-    "vuejs",
-    "soccer",
-    "futebol",
-    "football"
-  ],
-  "author": "@rfoel",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rfoel/futebol.io/issues"
-  },
-  "homepage": "https://github.com/rfoel/futebol.io#readme",
   "devDependencies": {
-    "concurrently": "^3.5.1"
+    "eslint": "^4.12.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-promise": "^3.6.0"
   }
 }
