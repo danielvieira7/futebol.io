@@ -1,5 +1,4 @@
 name = "futebol"
-type = "javascript"
+type = "webpack"
 workers_dev = true
-
 account_id = "b3c261b6ba69b5729a22686e729c0dbe"
